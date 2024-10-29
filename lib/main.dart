@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_app/network/http_page.dart';
+import 'package:flutter_demo_app/network/http_page_stateful.dart';
 import 'package:flutter_demo_app/widgets/layout/container_example.dart';
 import 'package:flutter_demo_app/widgets/layout/grid_view_example.dart';
 import 'package:flutter_demo_app/widgets/layout/row_and_column_example.dart';
@@ -49,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           children: [
             const Text('Base Widgets'),
             ListTile(
@@ -85,6 +87,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: const Text('Grid View'),
               onTap: () => _open(const GridViewExample()),
+            ),
+            const Divider(),
+            const Text('Network!'),
+            ListTile(
+              title: const Text('HTTP Get Page'),
+              onTap: () => _open(const HttpPage()),
+            ),
+            ListTile(
+              title: const Text('HTTP Get Page Statefull'),
+              onTap: () => _open(const HttpPageStateful()),
             ),
           ],
         )
